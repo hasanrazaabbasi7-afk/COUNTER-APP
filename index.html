@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="app">
+
+      <h1>ADVNACE COUNTER APP</h1>
+
+        <div id="counter">0</div>
+
+        
+        <div class="toggle-box">
+    <span>Limit</span>
+    <label class="switch">
+        <input type="checkbox" id="limitToggle">
+        <span class="slider"></span>
+    </label>
+</div>
+
+        
+        <div class="limit-box">
+    <input type="number" id="minValue" placeholder="Min value">
+    <input type="number" id="maxValue" placeholder="Max value">
+    <button id="applyLimit">Apply Limit</button>
+    <button id="removeLimit">Unlimited</button>
+</div>
+
+
+        <input type="number" id="customValue" placeholder="Set counter value">
+        <button id="setCounter">Set</button>
+
+
+        <div class="btn-group">
+            <button id="decrease">-</button>
+            <button id="reset">reset</button>
+            <button id="increase">+</button>
+        </div>
+        
+        <div class="controls">
+            <button class="theme-btn" data-bg="dark">dark</button>
+            <button class="theme-btn" data-bg="light">light</button>
+            <button class="theme-btn" data-bg="gradiant">gradiant</button>
+        </div>
+
+        <div class="controls">
+            <button class="color-btn" data-color ="#00ffd5">aqua</button>
+            <button class="color-btn" data-color ="#ff4d6d">pink</button>
+            <button class="color-btn" data-color ="#ffd60a">yellow</button>
+        </div>
+
+
+
+    </div>
+   <script src="./script.js"></script> 
+</body>
+</html>

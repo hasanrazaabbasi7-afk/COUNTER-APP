@@ -1,0 +1,218 @@
+/* ================== RESET ================== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.roboto-slab{
+    font-family: "Roboto Slab", serif;
+}
+
+/* ================== BODY ================== */
+body{
+    height: 100vh;                  /* 🔒 fixed viewport */
+    width: 100vw;
+    overflow: hidden;               /* 🔥 SCROLL COMPLETELY OFF */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg,#edc55b,#e8ccad,#c91b7a,#66bcb4);
+}
+
+/* ================== APP ================== */
+.app{
+    width: 100%;
+    max-width: 360px;
+    max-height: 100%;
+    background: rgba(183, 6, 189, 0.12);
+    padding: 22px;
+    border-radius: 60px 30px 30px 60px;
+    text-align: center;
+    overflow: hidden;               /* 🔒 inner scroll bhi band */
+    box-shadow:
+        rgba(0,0,0,0.12) 0px 1px 3px,
+        rgba(0,0,0,0.24) 0px 1px 2px;
+}
+
+/* ================== TITLE ================== */
+h1{
+    color: #2a6a47;
+    font-family: "Roboto Slab", serif;
+    margin-bottom: 15px;
+}
+
+/* ================== COUNTER ================== */
+#counter{
+    font-size: clamp(48px, 9vw, 68px);
+    color: #e25a26;
+    margin: 12px 0;
+    transition: 0.3s;
+}
+
+/* ================== BUTTONS ================== */
+.btn-group button{
+    background: #f3f3e8;
+    padding: 9px 18px;
+    margin: 6px;
+    font-size: 18px;
+    font-family: "Roboto Slab", serif;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    animation: glow 1.5s infinite alternate;
+    transition: transform 0.15s ease;
+}
+
+@keyframes glow{
+    from{ box-shadow: 0 0 4px #f1ef6e; }
+    to{
+        box-shadow:
+            0 0 15px #fccbaf,
+            0 0 25px #ebecb7,
+            0 0 25px #4fe6b3;
+    }
+}
+
+.btn-group button:hover{
+    transform: scale(1.05);         /* 🔒 SAFE SCALE */
+}
+
+#reset{
+    background: linear-gradient(80deg,#eed36d,#194f70);
+}
+
+/* ================== CONTROLS ================== */
+.controls{
+    margin-top: 8px;
+}
+
+.controls button{
+    background: linear-gradient(120deg,#68c7ec,#eae8b3,#64dbbd);
+    padding: 8px 12px;
+    margin: 5px;
+    font-size: 14px;
+    font-family: "Roboto Slab", serif;
+    color: #7b4b3a;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.controls button:hover{
+    transform: scale(1.05);
+}
+
+/* ================== INPUT ================== */
+#customValue{
+    width: 100%;
+    padding: 9px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 5px;
+    outline: none;
+    text-align: center;
+    font-size: 15px;
+}
+
+#setCounter{
+    margin-top: 8px;
+    padding: 9px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #00ffd5;
+    font-size: 15px;
+}
+
+/* ================== LIMIT ================== */
+.limit-box{
+    margin-top: 10px;
+}
+
+.limit-box input{
+    width: 48%;
+    padding: 7px;
+    margin: 4px 1%;
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+}
+
+.limit-box button{
+    width: 48%;
+    margin: 4px 1%;
+    padding: 7px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #ffd60a;
+}
+
+/* ================== COUNTER ANIMATION ================== */
+@keyframes up{
+    0%{ transform: scale(1); }
+    50%{ transform: scale(1.12); }
+    100%{ transform: scale(1); }
+}
+
+@keyframes down{
+    0%{ transform: scale(1); }
+    50%{ transform: scale(0.9); }
+    100%{ transform: scale(1); }
+}
+
+.up{ animation: up 0.25s ease; }
+.down{ animation: down 0.25s ease; }
+
+/* ================== TOGGLE ================== */
+.toggle-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.switch{
+    position: relative;
+    width: 46px;
+    height: 24px;
+}
+
+.switch input{
+    opacity: 0;
+}
+
+.slider{
+    position: absolute;
+    inset: 0;
+    background: #777;
+    border-radius: 25px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.slider::before{
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 3px;
+    bottom: 3px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.switch input:checked + .slider{
+    background: #00ffd5;
+}
+
+.switch input:checked + .slider::before{
+    transform: translateX(22px);
+}
